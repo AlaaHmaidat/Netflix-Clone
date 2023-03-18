@@ -9,7 +9,7 @@ import React, { useState } from 'react';
 function ModalMovie(props) {
 
   const [comment, setComment] = useState('');
-  const handleCom = (e) => {
+  const handleComment = (e) => {
     setComment(e.target.value);
   }
   const insertMovie = async (e) => {
@@ -32,6 +32,7 @@ function ModalMovie(props) {
 
     }
   }
+
   return (
     <Modal show={props.showFlag} onHide={props.handleclose}>
       <Modal.Header closeButton>
@@ -42,15 +43,14 @@ function ModalMovie(props) {
         {props.clickedCard.overview}
 
         <Form onSubmit={insertMovie}>
-
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Control name="comment" type="text" onChange={handleCom} />
+            <Form.Control name="comment" type="text" onChange={handleComment} />
           </Form.Group>
-
           <Button variant="primary" type="submit" onClick={props.handleclose}>
             Add to the favorite
           </Button>
         </Form>
+
       </Modal.Body>
     </Modal>
   );
