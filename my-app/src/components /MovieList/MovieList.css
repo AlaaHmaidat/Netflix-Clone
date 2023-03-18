@@ -1,0 +1,8 @@
+.cards {
+    text-align: center;
+
+}
+button.bt.btn.btn-primary {
+    background-color: var(--button-bg);
+    border-color: var(--headerFooter);
+}
