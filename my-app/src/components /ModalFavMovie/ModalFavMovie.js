@@ -13,6 +13,9 @@ function ModalFavMovie(props) {
       <Modal.Body>
         <Image src={`https://image.tmdb.org/t/p/w500${props.clickedCard.poster_path}`} width='100%'></Image>
         {props.clickedCard.overview}
+        <h6>comment</h6>
+        <p>{props.clickedCard.comment}</p>
+        
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={props.handleclose}>

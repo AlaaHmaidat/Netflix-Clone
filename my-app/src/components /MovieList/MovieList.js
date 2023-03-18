@@ -36,7 +36,8 @@ function MovieList(props) {
                 <Card.Title>{card.title}</Card.Title>
                 <Card.Text>
                   {`${card.overview.substring(0, 50)}...`}
-
+                  <h6>comment</h6>
+                  <p>{card.comment}</p>
                 </Card.Text>
                 <Button variant="primary" onClick={() => { handleShow(card) }} className='bt'>
                   show
