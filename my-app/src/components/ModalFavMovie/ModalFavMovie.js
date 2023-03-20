@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './ModalFavMovie.css';
 
 function ModalFavMovie(props) {

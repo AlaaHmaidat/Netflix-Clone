@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import Navbar from '../Navbar/Navbar';
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ModalFavMovie from '../ModalFavMovie/ModalFavMovie';
@@ -38,10 +37,6 @@ function MovieList(props) {
 
 
   return (
-    <div className="Home">
-
-      <Navbar />
-
       <main className="main">
 
         {props.favData.map((card) => {
@@ -73,9 +68,7 @@ function MovieList(props) {
 
       </main>
 
-      <footer></footer>
 
-    </div>
   );
 }
 

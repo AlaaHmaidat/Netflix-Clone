@@ -14,12 +14,6 @@ function FavList() {
   }
   //const [newArr, setNewArr] = useState([]);
 
-    const takeNewArr = (arr) => {
-      // console.log("parent Comp",arr);
-      // props.takeNewArr(arr);
-      setFavMovieArr(arr);
-  }
-
   useEffect(() => {
     FavListComponentesReq();
   }, [favMovieArr])

@@ -26,7 +26,6 @@ function ModalMovie(props) {
       const axiosRes = await axios.post(serverURl, obj);
       console.log(axiosRes.data);
 
-      //props.takeNewArrFromChild(axiosRes.data);
     }
     catch (err) {
 

@@ -1,15 +1,11 @@
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import Image from 'react-bootstrap/Image';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
 
 import './DeleteModal.css';
 
 function DeleteModal(props) {
-
-  const [newArr, setNewArr] = useState([]);
 
   const deleteMovie = async (e) => {
     e.preventDefault();

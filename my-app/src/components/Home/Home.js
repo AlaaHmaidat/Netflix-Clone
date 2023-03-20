@@ -1,17 +1,10 @@
 import { useEffect, useState } from 'react';
-import Navbar from '../Navbar/Navbar';
-//import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ModalMovie from '../ModalMovie/ModalMovie';
 import './Home.css';
 
 function Home() {
-
-  // const [show, setShow] = useState(false);//to open the modalMovie
-
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
 
   const [movieArr, setMovieArr] = useState([]);//to access data inside (return)
   const HomeComponentesReq = async () => {
@@ -36,9 +29,6 @@ function Home() {
     setShowFlag(false);
   }
   return (
-    <div className="Home">
-
-      <Navbar />
       <main className="main">
 
         {movieArr.map((card) => {
@@ -64,9 +54,8 @@ function Home() {
         <ModalMovie showFlag={showFlag} handleclose={handleclose} clickedCard={clickedCard}></ModalMovie>
 
       </main>
-      <footer></footer>
+    
 
-    </div>
   );
 }
 
