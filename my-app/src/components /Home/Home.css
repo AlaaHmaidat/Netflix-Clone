@@ -27,3 +27,6 @@ button.bt.btn.btn-primary {
     background-color: var(--button-bg);
     border-color: var(--headerFooter);
 }
+.Home{
+    background-color: #706f6f;
+}
