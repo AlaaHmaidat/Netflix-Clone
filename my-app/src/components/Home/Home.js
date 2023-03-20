@@ -16,7 +16,9 @@ function Home() {
   useEffect(() => {
     HomeComponentesReq();
   }, [])
+
   //.............
+  
   const [showFlag, setShowFlag] = useState(false);
   const [clickedCard, setClickedCard] = useState({});
 

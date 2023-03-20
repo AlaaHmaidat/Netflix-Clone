@@ -19,7 +19,9 @@ function MovieList(props) {
   const handleclose = () => {
     setShowFlag(false);
   }
-//....
+
+//.........
+
   const [showDeleteFlag, setShowDeleteFlag] = useState(false);
   const [clickedDeleteCard, setClickedDeleteCard] = useState({});
 
@@ -31,10 +33,7 @@ function MovieList(props) {
 
   const handlecloseDelete = () => {
     setShowDeleteFlag(false);
-  }
-  //....
- 
-
+  } 
 
   return (
       <main className="main">
@@ -67,7 +66,6 @@ function MovieList(props) {
         <DeleteModal showDeleteFlag={showDeleteFlag} handlecloseDelete={handlecloseDelete} clickedDeleteCard={clickedDeleteCard}  ></DeleteModal>
 
       </main>
-
 
   );
 }

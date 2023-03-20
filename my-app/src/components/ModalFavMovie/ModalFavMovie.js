@@ -28,7 +28,6 @@ function ModalFavMovie(props) {
       //close the update modal
       props.handleclose();
 
-      //props.takeNewArrFromChild(axiosRes.data);
     }
     catch (err) {
 

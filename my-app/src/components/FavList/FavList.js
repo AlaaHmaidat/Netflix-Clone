@@ -12,16 +12,12 @@ function FavList() {
     console.log(data);
     setFavMovieArr(data);
   }
-  //const [newArr, setNewArr] = useState([]);
-
   useEffect(() => {
     FavListComponentesReq();
   }, [favMovieArr])
 
   return (
-    <>
       <MovieList favData={favMovieArr} />
-    </>
   );
 }
 

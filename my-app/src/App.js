@@ -7,14 +7,13 @@ import './App.css'
 function App() {
 
   return (
-    <div className="App">
+    <main>
       <Navbar />
-
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/favorite" element={<FavList />}></Route>
       </Routes>
-    </div>
+    </main>
   );
 }
 
