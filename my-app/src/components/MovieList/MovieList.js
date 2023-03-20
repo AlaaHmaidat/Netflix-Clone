@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react';
-import Navbar from '../Navbar/Navbar';
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ModalFavMovie from '../ModalFavMovie/ModalFavMovie';
-import axios from 'axios';
+import DeleteModal from '../DeleteModal/DeleteModal';
 import './MovieList.css';
 
 function MovieList(props) {
@@ -20,40 +19,24 @@ function MovieList(props) {
   const handleclose = () => {
     setShowFlag(false);
   }
-  const [newArr, setNewArr] = useState([]);
+//....
+  const [showDeleteFlag, setShowDeleteFlag] = useState(false);
+  const [clickedDeleteCard, setClickedDeleteCard] = useState({});
 
-  //   const takeNewArrFromChild = (arr) => {
-  //     // console.log("parent Comp",arr);
-  //     // props.takeNewArr(arr);
-  //     setNewArr(arr);
-  // }
+  const handleShowDelete = (item) => {
+    console.log(item);
+    setClickedDeleteCard(item);
+    setShowDeleteFlag(true);
+  }
 
-  //................
+  const handlecloseDelete = () => {
+    setShowDeleteFlag(false);
+  }
+  //....
+ 
 
-  // const [clickedCardForDelete, setClickedCardForDelete] = useState({});
 
-  // const deleteHandle = (item) => {
-  //   setClickedCardForDelete(item);
-  // }
-
-  // const deleteMovie = async (e) => {
-
-  //   try {
-  //     e.preventDefault();
-  //     const serverURl = `https://movies-library-production-1635.up.railway.app/DELETE/${props.clickedCardForDelete.id}`;
-  //     const axiosRes = await axios.delete(serverURl);
-  //     console.log(axiosRes.data);
-
-  //   }
-  //   catch (err) {
-
-  //   }
-  // }
   return (
-    <div className="Home">
-
-      <Navbar />
-
       <main className="main">
 
         {props.favData.map((card) => {
@@ -72,7 +55,7 @@ function MovieList(props) {
                   Update
                 </Button>
                 {' '}
-                <Button variant="primary" className='btDe' >
+                <Button variant="primary" className='btDe' onClick={() => { handleShowDelete(card) }} >
                   Delete
                 </Button>
               </Card.Body>
@@ -81,12 +64,11 @@ function MovieList(props) {
         })}
 
         <ModalFavMovie showFlag={showFlag} handleclose={handleclose} clickedCard={clickedCard} ></ModalFavMovie>
+        <DeleteModal showDeleteFlag={showDeleteFlag} handlecloseDelete={handlecloseDelete} clickedDeleteCard={clickedDeleteCard}  ></DeleteModal>
 
       </main>
 
-      <footer></footer>
 
-    </div>
   );
 }
 
