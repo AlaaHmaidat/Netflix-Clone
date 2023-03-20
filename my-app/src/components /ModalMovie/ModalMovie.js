@@ -40,11 +40,11 @@ function ModalMovie(props) {
       </Modal.Header>
       <Modal.Body>
         <Image src={`https://image.tmdb.org/t/p/w500${props.clickedCard.poster_path}`} width='100%' />
-        {props.clickedCard.overview}
-
+        
+        <p>{props.clickedCard.overview}</p>
         <Form onSubmit={insertMovie}>
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Control name="comment" type="text" onChange={handleComment} />
+            <Form.Control name="comment" type="text" onChange={handleComment} placeholder="Write your comment here" />
           </Form.Group>
           <Button variant="primary" type="submit" onClick={props.handleclose}>
             Add to the favorite

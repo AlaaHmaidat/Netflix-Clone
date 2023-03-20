@@ -9,7 +9,7 @@ function Navbar() {
           Netflix Clone
         </h4>
         <Link to="/" className="link">Home</Link>
-        <Link to="/addmovie" className="link">Movies</Link>
+        <Link to="/favorite" className="link">Favorite</Link>
       </nav>
     </>
   )

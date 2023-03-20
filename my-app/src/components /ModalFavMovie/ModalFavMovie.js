@@ -8,24 +8,22 @@ import './ModalFavMovie.css';
 
 function ModalFavMovie(props) {
 
-  // const [comment, setComment] = useState('');
-  // const handleComment = (e) => {
-  //   setComment(e.target.value);
-  // }
+  const [comment, setComment] = useState('');
+  const handleComment = (e) => {
+    setComment(e.target.value);
+  }
 
   const updateMovie = async (e) => {
     e.preventDefault();
 
     try {
       const obj = {
-
-        // comment: comment //(if i use useState and handleComment methodes) and i shoud use onChange={handleComment} in (Form.Control)
-        comment: e.target.comment.value
+        comment: comment //(if i use useState and handleComment methodes) and i shoud use onChange={handleComment} in (Form.Control)
+        // comment: e.target.comment.value
       }
 
-      const serverURl = `https://movies-library-production-1635.up.railway.app/UPDATE/${props.clickedCard.id}`;
+      const serverURl = `https://movies-library-production-1635.up.railway.app/favorite/${props.clickedCard.id}`;
       const axiosRes = await axios.put(serverURl, obj);
-      console.log(axiosRes.data);
 
       //close the update modal
       props.handleclose();
@@ -33,11 +31,11 @@ function ModalFavMovie(props) {
       //props.takeNewArrFromChild(axiosRes.data);
     }
     catch (err) {
-      
+
     }
   }
 
-//............
+  //............
 
   return (
     <Modal show={props.showFlag} onHide={props.handleclose}>
@@ -52,7 +50,7 @@ function ModalFavMovie(props) {
         <h6>comment</h6>
         <Form onSubmit={updateMovie}>
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Control name="comment" type="text" defaultValue={props.clickedCard.comment} />
+            <Form.Control name="comment" type="text" onChange={handleComment} defaultValue={props.clickedCard.comment} />
           </Form.Group>
           <Button variant="secondary" className='bt' type="submit" >
             Update
