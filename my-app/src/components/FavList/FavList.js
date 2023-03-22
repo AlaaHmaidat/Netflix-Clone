@@ -6,7 +6,7 @@ function FavList() {
 
   const [favMovieArr, setFavMovieArr] = useState([]);//to access data inside (return)
   const FavListComponentesReq = async () => {
-    const serverURL = `https://movies-library-production-1635.up.railway.app/favorite`;
+    const serverURL = `${process.env.REACT_APP_serverURL}/favorite`;
     const resData = await fetch(serverURL);
     const data = await resData.json();
     console.log(data);

@@ -22,7 +22,7 @@ function ModalMovie(props) {
         overview: props.clickedCard.overview,
         comment: comment
       }
-      const serverURl = `https://movies-library-production-1635.up.railway.app/addmovie`;
+      const serverURl = `${process.env.REACT_APP_serverURL}/addmovie`;
       const axiosRes = await axios.post(serverURl, obj);
       console.log(axiosRes.data);
 

@@ -8,7 +8,7 @@ function Home() {
 
   const [movieArr, setMovieArr] = useState([]);//to access data inside (return)
   const HomeComponentesReq = async () => {
-    const serverURL = `https://movies-library-production-1635.up.railway.app/trending`;
+    const serverURL = `${process.env.REACT_APP_serverURL}/trending`;
     const resData = await fetch(serverURL);
     const data = await resData.json();
     setMovieArr(data);

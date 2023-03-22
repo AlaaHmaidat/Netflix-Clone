@@ -10,7 +10,7 @@ function DeleteModal(props) {
   const deleteMovie = async (e) => {
     e.preventDefault();
     try {
-      const serverURl = `https://movies-library-production-1635.up.railway.app/favorite/${props.clickedDeleteCard.id}`;
+      const serverURl = `${process.env.REACT_APP_serverURL}/favorite/${props.clickedDeleteCard.id}`;
       const axiosRes = await axios.delete(serverURl);
       
     }

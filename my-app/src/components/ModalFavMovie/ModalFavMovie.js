@@ -22,7 +22,7 @@ function ModalFavMovie(props) {
         // comment: e.target.comment.value
       }
 
-      const serverURl = `https://movies-library-production-1635.up.railway.app/favorite/${props.clickedCard.id}`;
+      const serverURl = `${process.env.REACT_APP_serverURL}/favorite/${props.clickedCard.id}`;
       const axiosRes = await axios.put(serverURl, obj);
 
       //close the update modal
