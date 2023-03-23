@@ -24,7 +24,7 @@ function ModalFavMovie(props) {
 
       const serverURl = `${process.env.REACT_APP_serverURL}/favorite/${props.clickedCard.id}`;
       const axiosRes = await axios.put(serverURl, obj);
-
+      console.log(axiosRes);
       //close the update modal
       props.handleclose();
 

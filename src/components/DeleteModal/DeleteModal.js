@@ -12,7 +12,7 @@ function DeleteModal(props) {
     try {
       const serverURl = `${process.env.REACT_APP_serverURL}/favorite/${props.clickedDeleteCard.id}`;
       const axiosRes = await axios.delete(serverURl);
-      
+      console.log(axiosRes);
     }
     catch (err) {
 
