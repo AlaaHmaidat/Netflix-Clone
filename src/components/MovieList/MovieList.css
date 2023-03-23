@@ -1,0 +1,19 @@
+:root {
+    --background: #ffffffee;
+    --headerFooter: #161616;
+    --text: rgb(217, 35, 46);
+    --button-bg: #161616;
+    --button-text: #ffffffee;
+}
+.cards {
+    text-align: center;
+
+}
+button.bt.btn.btn-primary {
+    background-color: var(--button-bg);
+    border-color: var(--headerFooter);
+}
+button.btDe.btn.btn-primary {
+    background-color: rgb(217, 35, 46);
+    border-color: rgb(217, 35, 46);
+}
