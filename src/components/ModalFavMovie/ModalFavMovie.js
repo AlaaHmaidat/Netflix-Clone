@@ -34,7 +34,6 @@ function ModalFavMovie(props) {
     }
   }
 
-  //............
 
   return (
     <Modal show={props.showFlag} onHide={props.handleclose}>
